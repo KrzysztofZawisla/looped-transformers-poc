@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+data/
+runs/
+hf/
+*.pt
+*.bin
+.venv/
+.env
+.commandcode/

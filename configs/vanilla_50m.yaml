@@ -1,0 +1,38 @@
+model:
+  model_type: vanilla
+  vocab_size: 16384
+  d_model: 768
+  n_heads: 12
+  head_dim: 64
+  n_layers: 6
+  max_seq_len: 512
+  dropout: 0.0
+  tie_embeddings: true
+  mlp_hidden: 2048
+
+train:
+  data_dir: data/tinystories
+  out_dir: runs/vanilla_50m
+  seq_len: 512
+  batch_tokens: 131072
+  micro_batch_size: 32
+  max_steps: 8000
+  lr: 1.0e-3
+  min_lr: 1.0e-4
+  warmup_steps: 200
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  dtype: bf16
+  grad_checkpoint: false
+  compile: false
+  eval_every: 250
+  eval_batches: 40
+  save_every: 1000
+  log_every: 10
+  sample_every: 1000
+  sample_tokens: 80
+  seed: 1337
+  wandb: false
+  wandb_project: looped-lm
